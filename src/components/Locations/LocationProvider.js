@@ -26,5 +26,13 @@ export const LocationProvider = (props) => {
         .then(getLocations)
     }
 
-    // return the context provider whih has the locations state,
+    // return the context provider whih has the locations state, the add location function, and the getlocation function as keys. This allows any child element to access them
+
+    return (
+        <LocationContext.Provider value ={{
+            locations, addLocations, getLocations
+        }}>
+            {props.children}
+        </LocationContext.Provider>
+    )
 }
